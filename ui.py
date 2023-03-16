@@ -23,15 +23,6 @@ def choice_menu():
 def show_data(input_str):
     for i in input_str.split('\n'):
         for j in i.split(';'):
-            if len(j)<4:
-                a=5
-            elif len(j)<8:
-                a=4
-            elif len(j)<12:
-                a=3
-            elif len(j)<16:
-                a=2
-            else:
-                a=1
-            print(j,end="\t"*a)
+            a = 6-(len(j)//4)
+            print(j,end="\t"*int(a))
         print()
